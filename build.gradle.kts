@@ -11,6 +11,9 @@ repositories {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/com.jakewharton.fliptables/fliptables
+    implementation("com.jakewharton.fliptables:fliptables:1.0.2")
+
     testImplementation(kotlin("test"))
 }
 

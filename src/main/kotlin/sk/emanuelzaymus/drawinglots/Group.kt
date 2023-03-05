@@ -1,16 +1,18 @@
 package sk.emanuelzaymus.drawinglots
 
 data class Group(val responsible: Member) {
-    private val members: MutableList<Member> = mutableListOf()
+    private val _members: MutableList<Member> = mutableListOf()
+    val members: List<Member> get() = _members
+
     var score = responsible.points
 
     fun addMember(member: Member) {
-        members.add(member)
+        _members.add(member)
         score += member.points
     }
 
     fun toCsvFormat(delimiter: String) =
-        "${responsible.toCsvFormat(delimiter)}${members.joinToString("") { it.toCsvFormat(delimiter) }}"
+        "${responsible.toCsvFormat(delimiter)}${_members.joinToString("") { it.toCsvFormat(delimiter) }}"
 
-    override fun toString() = "Group(responsible=$responsible, members=$members, score=$score)"
+    override fun toString() = "Group(responsible=$responsible, members=$_members, score=$score)"
 }

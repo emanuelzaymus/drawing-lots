@@ -1,3 +1,4 @@
+import com.jakewharton.fliptables.FlipTable
 import sk.emanuelzaymus.drawinglots.Group
 import sk.emanuelzaymus.drawinglots.Member
 import sk.emanuelzaymus.drawinglots.MemberListType
@@ -15,7 +16,7 @@ fun main(args: Array<String>) {
 
     val groups: List<Group> = drawGroups(shuffledMemberLists)
 
-    for (group in groups) println(group)
+    printTable(groups)
 
     writeToCsvFile(groups, csvFileOut, delimiter)
 }
@@ -108,6 +109,21 @@ fun drawGroups(memberLists: Map<MemberListType, List<Member>>): List<Group> {
         }
     }
     return groups
+}
+
+fun printTable(groups: List<Group>) {
+    val groupTable: Array<String> = groups.map { group ->
+        FlipTable.of(
+            group.responsible.run { arrayOf(name, surname) },
+            group.members.map { arrayOf(it.name, it.surname) }.toTypedArray()
+        )
+    }.toTypedArray()
+
+    val mainTable = FlipTable.of(
+        groups.indices.map { "Group ${it + 1}" }.toTypedArray(),
+        arrayOf(groupTable)
+    )
+    println(mainTable)
 }
 
 // Writing to File
