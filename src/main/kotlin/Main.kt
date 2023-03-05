@@ -2,7 +2,6 @@ import sk.emanuelzaymus.drawinglots.Group
 import sk.emanuelzaymus.drawinglots.Member
 import sk.emanuelzaymus.drawinglots.MemberListType
 import java.io.File
-import java.nio.charset.Charset
 import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
@@ -69,7 +68,7 @@ fun readMemberLists(csvFile: File, delimiter: String): Map<MemberListType, List<
 
     var currentList: MutableList<Member>? = null
 
-    for (line in csvFile.readLines(Charset.defaultCharset())) {
+    for (line in csvFile.readLines(Charsets.UTF_8)) {
         val split = line.split(delimiter)
         val name = split[0]
         val surname = split[1]
@@ -117,5 +116,5 @@ fun writeToCsvFile(groups: List<Group>, csvFile: File, delimiter: String) {
     for ((index, group) in groups.withIndex()) {
         stringToWrite += "Group ${index + 1}$delimiter\n${group.toCsvFormat(delimiter)}$delimiter\n"
     }
-    csvFile.writeText(stringToWrite, Charset.defaultCharset())
+    csvFile.writeText(stringToWrite, Charsets.UTF_8)
 }
