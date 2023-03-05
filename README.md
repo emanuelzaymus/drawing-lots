@@ -1,9 +1,8 @@
 # drawing-lots
 
 #### TODO:
-- Make executable from console
 - Move logic into classes
-- Make testable
+- Make testable (with init seed for random class)
 - Tests ?
 - Add CLI library to simplify agrs processing
 - Readme ?
