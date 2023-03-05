@@ -120,7 +120,7 @@ fun printTable(groups: List<Group>) {
     }.toTypedArray()
 
     val mainTable = FlipTable.of(
-        groups.indices.map { "Group ${it + 1}" }.toTypedArray(),
+        groups.withIndex().map { "Group ${it.index + 1} (members: ${it.value.score})" }.toTypedArray(),
         arrayOf(groupTable)
     )
     println(mainTable)
