@@ -53,20 +53,20 @@ fun printHelp() {
         |
         |Example:
         |kotlinc -script drawing.kts list-of-members.csv drawn-groups.csv ,
-    """.trimMargin()
+        """.trimMargin()
     )
 }
 
 
 // Reading and Converting
 fun readMemberLists(csvFile: File, delimiter: String): Map<MemberListType, List<Member>> {
-    val retMemberLists = mapOf(
-        MemberListType.RESPONSIBLES to mutableListOf<Member>(),
-        MemberListType.ACTIVE to mutableListOf<Member>(),
-        MemberListType.NOT_ACTIVE to mutableListOf<Member>()
+    val retMemberLists = mapOf<MemberListType, MutableList<Member>>(
+        MemberListType.RESPONSIBLES to mutableListOf(),
+        MemberListType.ACTIVE to mutableListOf(),
+        MemberListType.NOT_ACTIVE to mutableListOf()
     )
 
-    var currentList: MutableList<Member>? = null
+    lateinit var currentList: MutableList<Member>
 
     for (line in csvFile.readLines(Charsets.UTF_8)) {
         val split = line.split(delimiter)
@@ -74,10 +74,10 @@ fun readMemberLists(csvFile: File, delimiter: String): Map<MemberListType, List<
         val surname = split[1]
 
         if (surname.isEmpty()) {
-            val memberListType = MemberListType.values().first { it.string == name.toLowerCase() }
-            currentList = retMemberLists[memberListType]
+            val memberListType = MemberListType.values().first { it.string == name.lowercase() }
+            currentList = retMemberLists.getValue(memberListType)
         } else {
-            currentList!!.add(Member(name, surname))
+            currentList.add(Member(name, surname))
         }
     }
     return retMemberLists
@@ -85,7 +85,7 @@ fun readMemberLists(csvFile: File, delimiter: String): Map<MemberListType, List<
 
 // Shuffling
 fun shuffleMemberLists(memberLists: Map<MemberListType, List<Member>>): Map<MemberListType, List<Member>> {
-    return memberLists.toMutableMap().map { it.key to it.value.toMutableList().shuffled() }.toMap()
+    return memberLists.mapValues { it.value.shuffled() }
 }
 
 // Drawing
@@ -97,7 +97,7 @@ fun drawGroups(memberLists: Map<MemberListType, List<Member>>): List<Group> {
     members.addAll(memberLists[MemberListType.NOT_ACTIVE]!!)
 
     while (members.isNotEmpty()) {
-        var averageScore = groups.map { it.score }.sum() / groups.size.toDouble()
+        val averageScore = groups.sumOf { it.score } / groups.size.toDouble()
         for (group in groups) {
             if (members.isNotEmpty()) {
                 if (group.score <= averageScore) {
@@ -112,9 +112,10 @@ fun drawGroups(memberLists: Map<MemberListType, List<Member>>): List<Group> {
 
 // Writing to File
 fun writeToCsvFile(groups: List<Group>, csvFile: File, delimiter: String) {
-    var stringToWrite = ""
-    for ((index, group) in groups.withIndex()) {
-        stringToWrite += "Group ${index + 1}$delimiter\n${group.toCsvFormat(delimiter)}$delimiter\n"
+    val stringToWrite = buildString {
+        for ((index, group) in groups.withIndex()) {
+            append("Group ${index + 1}$delimiter\n${group.toCsvFormat(delimiter)}$delimiter\n")
+        }
     }
     csvFile.writeText(stringToWrite, Charsets.UTF_8)
 }
