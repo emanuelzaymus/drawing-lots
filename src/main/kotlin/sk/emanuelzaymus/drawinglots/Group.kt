@@ -5,6 +5,7 @@ data class Group(val responsible: Member) {
     val members: List<Member> get() = _members
 
     var score = responsible.points
+        private set
 
     fun addMember(member: Member) {
         _members.add(member)
@@ -12,7 +13,7 @@ data class Group(val responsible: Member) {
     }
 
     fun toCsvFormat(delimiter: String) =
-        "${responsible.toCsvFormat(delimiter)}${_members.joinToString("") { it.toCsvFormat(delimiter) }}"
+        responsible.toCsvFormat(delimiter) + _members.joinToString("") { it.toCsvFormat(delimiter) }
 
-    override fun toString() = "Group(responsible=$responsible, members=$_members, score=$score)"
+    override fun toString() = "Group(responsible=$responsible, members=$members, score=$score)"
 }
