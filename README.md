@@ -6,15 +6,15 @@ Small script for creating random groups from a list of people.
 
 People in input member list are read from CSV file.
 
-People are divided into three groups:
+People needs to be divided into three groups:
 
 - Leaders
 - Active members
 - Inactive members
 
-Each leader and member has defined their points (weight). E.g. we
+Each leader and member has defined their **name/s, surname and points** (weight). E.g. we
 assign each member one point, but when we have two member in one
-entry we assign two points.
+entry, we assign two points.
 
 Example:
 
@@ -57,8 +57,8 @@ member in each group** considering member's points (weight).
 
 ### How to use it
 
-If we want to randomly create group from people in `list-of-members.csv` file
-with initial seed `1000` and we want to print in to console, we use:
+If we want to randomly create group with people in `list-of-members.csv` file
+with initial seed `1000` and we want to `print` in to the console, we use:
 
 ```
 % java -jar drawing-lots.jar list-of-members.csv --seed 1000 --print
