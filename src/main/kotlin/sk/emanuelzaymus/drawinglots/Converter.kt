@@ -4,9 +4,9 @@ object Converter {
 
     fun convertToMemberLists(memberListsLines: List<String>, delimiter: String): Map<MemberListType, List<Member>> {
         val memberLists = mapOf<MemberListType, MutableList<Member>>(
-            MemberListType.RESPONSIBLES to mutableListOf(),
+            MemberListType.LEADERS to mutableListOf(),
             MemberListType.ACTIVE to mutableListOf(),
-            MemberListType.NOT_ACTIVE to mutableListOf()
+            MemberListType.INACTIVE to mutableListOf()
         )
 
         lateinit var currentList: MutableList<Member>

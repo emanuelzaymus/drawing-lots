@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
 
 private val memberListLines = """
-    Responsibles,,
+    Leaders,,
     JULIE,JAMES,1
     JEANETTE,COOK,1
     CHARLOTTE,HERRERA,1
@@ -27,7 +27,7 @@ private val memberListLines = """
     Bonnie,Flores,1
     John and Ann,Coleman,2
     Adam and Rebecca,Williams,2
-    Not Active,,
+    Inactive,,
     marion,snyder,1
     jan,barnett,1
     randolph,henry,1

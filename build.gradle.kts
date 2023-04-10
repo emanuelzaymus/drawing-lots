@@ -14,6 +14,7 @@ dependencies {
     implementation("com.github.ajalt.clikt:clikt:3.5.2")
     // https://mvnrepository.com/artifact/com.jakewharton.fliptables/fliptables
     implementation("com.jakewharton.fliptables:fliptables:1.1.0")
+    // Modern library could be used: https://github.com/JakeWharton/picnic
 
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
