@@ -7,32 +7,32 @@ import org.junit.jupiter.params.provider.MethodSource
 
 private val memberListLines = """
     Responsibles,,
-    ResponName1,ResponSurname1,1
-    ResponName2,ResponSurname2,1
-    ResponName3,ResponSurname3,1
-    ResponName4,ResponSurname4,1
-    ResponName5,ResponSurname5,1
+    JULIE,JAMES,1
+    JEANETTE,COOK,1
+    CHARLOTTE,HERRERA,1
+    CLYDE,HANSON,1
+    MARVIN,DIAZ,1
     Active,,
-    ActiveName6,ActiveSurname6,1
-    ActiveName7,ActiveSurname7,1
-    ActiveName8,ActiveSurname8,1
-    ActiveName9,ActiveSurname9,1
-    ActiveName10,ActiveSurname10,1
-    ActiveName11,ActiveSurname11,1
-    ActiveName12,ActiveSurname12,1
-    ActiveName13,ActiveSurname13,1
-    ActiveName14,ActiveSurname14,1
-    ActiveName15,ActiveSurname15,1
-    ActiveName16,ActiveSurname16,1
-    ActiveName17,ActiveSurname17,1
-    ActiveName18 a 19,ActiveSurname18_19,2
-    ActiveName20 a 21,ActiveSurname20_21,2
+    Erik,Poole,1
+    Simon,White,1
+    Raymond,Vargas,1
+    Wilson,Underwood,1
+    Byron,Shaw,1
+    Earl,Wilson,1
+    Julie,Lee,1
+    Melissa,Simmons,1
+    Roger,Moore,1
+    Sarah,Russell,1
+    Catherine,Kelly,1
+    Bonnie,Flores,1
+    John and Ann,Coleman,2
+    Adam and Rebecca,Williams,2
     Not Active,,
-    NotActiveName22,NotActiveSurname22,1
-    NotActiveName23,NotActiveSurname23,1
-    NotActiveName24,NotActiveSurname24,1
-    NotActiveName25,NotActiveSurname25,1
-    NotActiveName26 a 27,NotActiveSurname26_27,2
+    marion,snyder,1
+    jan,barnett,1
+    randolph,henry,1
+    robyn,thomas,1
+    justin and jesse,baker,2
 """.trimIndent().lines()
 
 private val memberLists = Converter.convertToMemberLists(memberListLines, ",")
@@ -50,12 +50,12 @@ internal class DrawingLotsTest {
     private companion object {
         @JvmStatic
         fun getSeedDrawnGroupsArguments(): List<Arguments> = listOf(
-            0L to "[Group(responsible=ResponName3 ResponSurname3, members=[ActiveName18 a 19 ActiveSurname18_19, ActiveName10 ActiveSurname10, ActiveName8 ActiveSurname8, NotActiveName25 NotActiveSurname25], score=6), Group(responsible=ResponName4 ResponSurname4, members=[ActiveName9 ActiveSurname9, ActiveName17 ActiveSurname17, ActiveName13 ActiveSurname13, NotActiveName26 a 27 NotActiveSurname26_27], score=6), Group(responsible=ResponName1 ResponSurname1, members=[ActiveName7 ActiveSurname7, ActiveName11 ActiveSurname11, ActiveName15 ActiveSurname15, NotActiveName24 NotActiveSurname24], score=5), Group(responsible=ResponName2 ResponSurname2, members=[ActiveName12 ActiveSurname12, ActiveName6 ActiveSurname6, ActiveName16 ActiveSurname16, NotActiveName23 NotActiveSurname23], score=5), Group(responsible=ResponName5 ResponSurname5, members=[ActiveName14 ActiveSurname14, ActiveName20 a 21 ActiveSurname20_21, NotActiveName22 NotActiveSurname22], score=5)]",
-            1L to "[Group(responsible=ResponName5 ResponSurname5, members=[ActiveName10 ActiveSurname10, ActiveName14 ActiveSurname14, ActiveName18 a 19 ActiveSurname18_19, NotActiveName22 NotActiveSurname22], score=6), Group(responsible=ResponName4 ResponSurname4, members=[ActiveName9 ActiveSurname9, ActiveName12 ActiveSurname12, ActiveName13 ActiveSurname13, NotActiveName26 a 27 NotActiveSurname26_27], score=6), Group(responsible=ResponName2 ResponSurname2, members=[ActiveName11 ActiveSurname11, ActiveName8 ActiveSurname8, ActiveName7 ActiveSurname7, NotActiveName25 NotActiveSurname25], score=5), Group(responsible=ResponName3 ResponSurname3, members=[ActiveName16 ActiveSurname16, ActiveName15 ActiveSurname15, ActiveName6 ActiveSurname6, NotActiveName24 NotActiveSurname24], score=5), Group(responsible=ResponName1 ResponSurname1, members=[ActiveName20 a 21 ActiveSurname20_21, ActiveName17 ActiveSurname17, NotActiveName23 NotActiveSurname23], score=5)]",
-            2L to "[Group(responsible=ResponName4 ResponSurname4, members=[ActiveName14 ActiveSurname14, ActiveName20 a 21 ActiveSurname20_21, ActiveName17 ActiveSurname17, NotActiveName26 a 27 NotActiveSurname26_27], score=7), Group(responsible=ResponName1 ResponSurname1, members=[ActiveName6 ActiveSurname6, ActiveName10 ActiveSurname10, ActiveName7 ActiveSurname7, NotActiveName24 NotActiveSurname24], score=5), Group(responsible=ResponName3 ResponSurname3, members=[ActiveName13 ActiveSurname13, ActiveName11 ActiveSurname11, ActiveName9 ActiveSurname9, NotActiveName23 NotActiveSurname23], score=5), Group(responsible=ResponName2 ResponSurname2, members=[ActiveName8 ActiveSurname8, ActiveName18 a 19 ActiveSurname18_19, NotActiveName22 NotActiveSurname22], score=5), Group(responsible=ResponName5 ResponSurname5, members=[ActiveName12 ActiveSurname12, ActiveName16 ActiveSurname16, ActiveName15 ActiveSurname15, NotActiveName25 NotActiveSurname25], score=5)]",
-            3L to "[Group(responsible=ResponName5 ResponSurname5, members=[ActiveName10 ActiveSurname10, ActiveName11 ActiveSurname11, ActiveName17 ActiveSurname17, ActiveName8 ActiveSurname8, NotActiveName25 NotActiveSurname25], score=6), Group(responsible=ResponName4 ResponSurname4, members=[ActiveName9 ActiveSurname9, ActiveName12 ActiveSurname12, ActiveName14 ActiveSurname14, NotActiveName26 a 27 NotActiveSurname26_27], score=6), Group(responsible=ResponName2 ResponSurname2, members=[ActiveName16 ActiveSurname16, ActiveName15 ActiveSurname15, ActiveName13 ActiveSurname13, NotActiveName24 NotActiveSurname24], score=5), Group(responsible=ResponName3 ResponSurname3, members=[ActiveName20 a 21 ActiveSurname20_21, ActiveName7 ActiveSurname7, NotActiveName23 NotActiveSurname23], score=5), Group(responsible=ResponName1 ResponSurname1, members=[ActiveName6 ActiveSurname6, ActiveName18 a 19 ActiveSurname18_19, NotActiveName22 NotActiveSurname22], score=5)]",
-            4L to "[Group(responsible=ResponName5 ResponSurname5, members=[ActiveName7 ActiveSurname7, ActiveName9 ActiveSurname9, ActiveName17 ActiveSurname17, NotActiveName24 NotActiveSurname24, NotActiveName25 NotActiveSurname25], score=6), Group(responsible=ResponName3 ResponSurname3, members=[ActiveName16 ActiveSurname16, ActiveName13 ActiveSurname13, ActiveName8 ActiveSurname8, NotActiveName26 a 27 NotActiveSurname26_27], score=6), Group(responsible=ResponName4 ResponSurname4, members=[ActiveName11 ActiveSurname11, ActiveName18 a 19 ActiveSurname18_19, NotActiveName23 NotActiveSurname23], score=5), Group(responsible=ResponName1 ResponSurname1, members=[ActiveName14 ActiveSurname14, ActiveName6 ActiveSurname6, ActiveName10 ActiveSurname10, NotActiveName22 NotActiveSurname22], score=5), Group(responsible=ResponName2 ResponSurname2, members=[ActiveName12 ActiveSurname12, ActiveName15 ActiveSurname15, ActiveName20 a 21 ActiveSurname20_21], score=5)]",
-            5L to "[Group(responsible=ResponName3 ResponSurname3, members=[ActiveName9 ActiveSurname9, ActiveName11 ActiveSurname11, ActiveName15 ActiveSurname15, NotActiveName23 NotActiveSurname23, NotActiveName25 NotActiveSurname25], score=6), Group(responsible=ResponName1 ResponSurname1, members=[ActiveName17 ActiveSurname17, ActiveName7 ActiveSurname7, ActiveName20 a 21 ActiveSurname20_21], score=5), Group(responsible=ResponName5 ResponSurname5, members=[ActiveName18 a 19 ActiveSurname18_19, ActiveName16 ActiveSurname16, NotActiveName22 NotActiveSurname22], score=5), Group(responsible=ResponName4 ResponSurname4, members=[ActiveName6 ActiveSurname6, ActiveName12 ActiveSurname12, ActiveName13 ActiveSurname13, NotActiveName26 a 27 NotActiveSurname26_27], score=6), Group(responsible=ResponName2 ResponSurname2, members=[ActiveName10 ActiveSurname10, ActiveName8 ActiveSurname8, ActiveName14 ActiveSurname14, NotActiveName24 NotActiveSurname24], score=5)]",
+            0L to "[Group(responsible=CHARLOTTE HERRERA, members=[John and Ann Coleman, Byron Shaw, Raymond Vargas, robyn thomas], score=6), Group(responsible=CLYDE HANSON, members=[Wilson Underwood, Bonnie Flores, Melissa Simmons, justin and jesse baker], score=6), Group(responsible=JULIE JAMES, members=[Simon White, Earl Wilson, Sarah Russell, randolph henry], score=5), Group(responsible=JEANETTE COOK, members=[Julie Lee, Erik Poole, Catherine Kelly, jan barnett], score=5), Group(responsible=MARVIN DIAZ, members=[Roger Moore, Adam and Rebecca Williams, marion snyder], score=5)]",
+            1L to "[Group(responsible=MARVIN DIAZ, members=[Byron Shaw, Roger Moore, John and Ann Coleman, marion snyder], score=6), Group(responsible=CLYDE HANSON, members=[Wilson Underwood, Julie Lee, Melissa Simmons, justin and jesse baker], score=6), Group(responsible=JEANETTE COOK, members=[Earl Wilson, Raymond Vargas, Simon White, robyn thomas], score=5), Group(responsible=CHARLOTTE HERRERA, members=[Catherine Kelly, Sarah Russell, Erik Poole, randolph henry], score=5), Group(responsible=JULIE JAMES, members=[Adam and Rebecca Williams, Bonnie Flores, jan barnett], score=5)]",
+            2L to "[Group(responsible=CLYDE HANSON, members=[Roger Moore, Adam and Rebecca Williams, Bonnie Flores, justin and jesse baker], score=7), Group(responsible=JULIE JAMES, members=[Erik Poole, Byron Shaw, Simon White, randolph henry], score=5), Group(responsible=CHARLOTTE HERRERA, members=[Melissa Simmons, Earl Wilson, Wilson Underwood, jan barnett], score=5), Group(responsible=JEANETTE COOK, members=[Raymond Vargas, John and Ann Coleman, marion snyder], score=5), Group(responsible=MARVIN DIAZ, members=[Julie Lee, Catherine Kelly, Sarah Russell, robyn thomas], score=5)]",
+            3L to "[Group(responsible=MARVIN DIAZ, members=[Byron Shaw, Earl Wilson, Bonnie Flores, Raymond Vargas, robyn thomas], score=6), Group(responsible=CLYDE HANSON, members=[Wilson Underwood, Julie Lee, Roger Moore, justin and jesse baker], score=6), Group(responsible=JEANETTE COOK, members=[Catherine Kelly, Sarah Russell, Melissa Simmons, randolph henry], score=5), Group(responsible=CHARLOTTE HERRERA, members=[Adam and Rebecca Williams, Simon White, jan barnett], score=5), Group(responsible=JULIE JAMES, members=[Erik Poole, John and Ann Coleman, marion snyder], score=5)]",
+            4L to "[Group(responsible=MARVIN DIAZ, members=[Simon White, Wilson Underwood, Bonnie Flores, randolph henry, robyn thomas], score=6), Group(responsible=CHARLOTTE HERRERA, members=[Catherine Kelly, Melissa Simmons, Raymond Vargas, justin and jesse baker], score=6), Group(responsible=CLYDE HANSON, members=[Earl Wilson, John and Ann Coleman, jan barnett], score=5), Group(responsible=JULIE JAMES, members=[Roger Moore, Erik Poole, Byron Shaw, marion snyder], score=5), Group(responsible=JEANETTE COOK, members=[Julie Lee, Sarah Russell, Adam and Rebecca Williams], score=5)]",
+            5L to "[Group(responsible=CHARLOTTE HERRERA, members=[Wilson Underwood, Earl Wilson, Sarah Russell, jan barnett, robyn thomas], score=6), Group(responsible=JULIE JAMES, members=[Bonnie Flores, Simon White, Adam and Rebecca Williams], score=5), Group(responsible=MARVIN DIAZ, members=[John and Ann Coleman, Catherine Kelly, marion snyder], score=5), Group(responsible=CLYDE HANSON, members=[Erik Poole, Julie Lee, Melissa Simmons, justin and jesse baker], score=6), Group(responsible=JEANETTE COOK, members=[Byron Shaw, Raymond Vargas, Roger Moore, randolph henry], score=5)]",
         ).map { (seed, drawnGroups) ->
             Arguments.of(seed, drawnGroups)
         }
