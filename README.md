@@ -16,9 +16,9 @@ Each leader and member has defined their **name/s, surname and points** (weight)
 assign each member one point, but when we have two member in one
 entry, we assign two points.
 
-Example:
+Example
 
-**list-of-members.csv**
+**[list-of-members.csv](https://github.com/emanuelzaymus/drawing-lots/blob/main/list-of-members.csv)**:
 
 ```
 Leaders,,
@@ -82,7 +82,9 @@ with initial seed `1000` and we want to `print` in to the console, we use:
 Process finished with exit code 0
 ```
 
-Groups were also written into CSV file `drwan-groups.csv` for us:
+Groups were also written into CSV file
+**[drwan-groups.csv](https://github.com/emanuelzaymus/drawing-lots/blob/main/drawn-groups.csv)**
+for us:
 
 ```
 Group 1,
