@@ -12,9 +12,10 @@ repositories {
 
 dependencies {
     // https://mvnrepository.com/artifact/com.jakewharton.fliptables/fliptables
-    implementation("com.jakewharton.fliptables:fliptables:1.0.2")
+    implementation("com.jakewharton.fliptables:fliptables:1.1.0")
 
     testImplementation(kotlin("test"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
 }
 
 tasks.test {
