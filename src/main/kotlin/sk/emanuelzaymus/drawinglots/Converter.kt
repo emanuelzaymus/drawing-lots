@@ -16,7 +16,7 @@ object Converter {
             val name = split[0]
             val surname = split[1]
 
-            if (surname.isEmpty()) {
+            if (surname.isEmpty()) { // If surname is empty, new group is coming
                 val memberListType = MemberListType.first { it.listName.equals(name, ignoreCase = true) }
                 currentList = memberLists.getValue(memberListType)
             } else {

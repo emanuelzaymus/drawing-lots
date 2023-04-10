@@ -15,11 +15,11 @@ class DrawingLots(private val memberLists: Map<MemberListType, List<Member>>) {
     }
 
     private fun drawGroups(shuffledMemberLists: Map<MemberListType, List<Member>>): List<Group> {
-        val groups = shuffledMemberLists[MemberListType.RESPONSIBLES]!!.map { Group(it) }
+        val groups = shuffledMemberLists.getValue(MemberListType.RESPONSIBLES).map { Group(it) }
 
         val members = mutableListOf<Member>()
-        members.addAll(shuffledMemberLists[MemberListType.ACTIVE]!!)
-        members.addAll(shuffledMemberLists[MemberListType.NOT_ACTIVE]!!)
+        members += shuffledMemberLists.getValue(MemberListType.ACTIVE)
+        members += shuffledMemberLists.getValue(MemberListType.NOT_ACTIVE)
 
         while (members.isNotEmpty()) {
             val averageScore = groups.sumOf { it.score } / groups.size.toDouble()
