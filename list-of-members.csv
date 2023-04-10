@@ -1,27 +1,27 @@
-Responsibles,
-ResponName1,ResponSurname1
-ResponName2,ResponSurname2
-ResponName3,ResponSurname3
-ResponName4,ResponSurname4
-ResponName5,ResponSurname5
-Active,
-ActiveName6,ActiveSurname6
-ActiveName7,ActiveSurname7
-ActiveName8,ActiveSurname8
-ActiveName9,ActiveSurname9
-ActiveName10,ActiveSurname10
-ActiveName11,ActiveSurname11
-ActiveName12,ActiveSurname12
-ActiveName13,ActiveSurname13
-ActiveName14,ActiveSurname14
-ActiveName15,ActiveSurname15
-ActiveName16,ActiveSurname16
-ActiveName17,ActiveSurname17
-ActiveName18 a 19,ActiveSurname18_19
-ActiveName20 a 21,ActiveSurname20_21
-Not Active,
-NotActiveName22,NotActiveSurname22
-NotActiveName23,NotActiveSurname23
-NotActiveName24,NotActiveSurname24
-NotActiveName25,NotActiveSurname25
-NotActiveName26 a 27,NotActiveSurname26_27
+Responsibles,,
+ResponName1,ResponSurname1,1
+ResponName2,ResponSurname2,1
+ResponName3,ResponSurname3,1
+ResponName4,ResponSurname4,1
+ResponName5,ResponSurname5,1
+Active,,
+ActiveName6,ActiveSurname6,1
+ActiveName7,ActiveSurname7,1
+ActiveName8,ActiveSurname8,1
+ActiveName9,ActiveSurname9,1
+ActiveName10,ActiveSurname10,1
+ActiveName11,ActiveSurname11,1
+ActiveName12,ActiveSurname12,1
+ActiveName13,ActiveSurname13,1
+ActiveName14,ActiveSurname14,1
+ActiveName15,ActiveSurname15,1
+ActiveName16,ActiveSurname16,1
+ActiveName17,ActiveSurname17,1
+ActiveName18 a 19,ActiveSurname18_19,2
+ActiveName20 a 21,ActiveSurname20_21,2
+Not Active,,
+NotActiveName22,NotActiveSurname22,1
+NotActiveName23,NotActiveSurname23,1
+NotActiveName24,NotActiveSurname24,1
+NotActiveName25,NotActiveSurname25,1
+NotActiveName26 a 27,NotActiveSurname26_27,2

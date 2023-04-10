@@ -15,12 +15,13 @@ object Converter {
             val split = line.split(delimiter)
             val name = split[0]
             val surname = split[1]
+            val points = split[2].toIntOrNull() ?: 0
 
             if (surname.isEmpty()) { // If surname is empty, new group is coming
                 val memberListType = MemberListType.first { it.listName.equals(name, ignoreCase = true) }
                 currentList = memberLists.getValue(memberListType)
             } else {
-                currentList.add(Member(name, surname))
+                currentList.add(Member(name, surname, points))
             }
         }
         return memberLists
