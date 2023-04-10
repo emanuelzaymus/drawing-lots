@@ -1,11 +1,12 @@
 package sk.emanuelzaymus.drawinglots
 
-data class Member(val name: String, val surname: String) {
+data class Member(val name: String, val surname: String) : CsvFormat {
 
     val points: Int = if (name.contains(" a ", true)) 2 else 1
 
-    fun toCsvFormat(delimiter: String) = "$name$delimiter$surname\n"
+    override fun toCsvFormat(delimiter: String) = "$name$delimiter$surname\n"
 
+    // This toString() is important for unit tests !
     override fun toString() = "$name $surname"
 
 }
