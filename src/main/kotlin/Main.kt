@@ -1,5 +1,5 @@
-import sk.emanuelzaymus.drawinglots.DrawingLots
+import sk.emanuelzaymus.drawinglots.DrawingLotsApp
 
 fun main(args: Array<String>) {
-    DrawingLots(0, *args)
+    DrawingLotsApp().main(args)
 }

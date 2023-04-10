@@ -11,11 +11,13 @@ repositories {
 }
 
 dependencies {
+    implementation("com.github.ajalt.clikt:clikt:3.5.2")
     // https://mvnrepository.com/artifact/com.jakewharton.fliptables/fliptables
     implementation("com.jakewharton.fliptables:fliptables:1.1.0")
 
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.2")
 }
 
 tasks.test {
